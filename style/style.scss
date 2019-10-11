@@ -1,0 +1,118 @@
+$font-main: 'Montserrat', sans-serif;
+@mixin animated-after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 0;
+  height: 4px;
+  transition: all .2s;
+}
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18.5px;
+}
+a {
+  text-decoration: none;
+  color: #dddddd;
+}
+body {
+  display: flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  flex: auto 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: $font-main;
+  color: #dddddd;
+  background: linear-gradient(to top, #202020, #2f2f2f);
+  padding: 0 5vw;
+
+  .logo {
+    flex: auto 0 0;
+    padding: 15px 0;
+  }
+  nav.main-nav {
+    display: flex;
+    flex: auto 1 0;
+
+    .main-nav-item {
+      margin-left: 4vw;
+      position: relative;
+      padding: 15px 0;
+      cursor: pointer;
+      &:first-child {
+        margin-left: 7vw;
+      }
+      &:after {
+        background: #dddddd;
+        @include animated-after;
+      }
+      &:hover:after {
+        width: 100%;
+      }
+    }
+
+
+  }
+  .auth {
+    padding: 15px 0;
+  }
+}
+
+main {
+  flex: auto 1 1;
+  font-family: $font-main;
+  padding: 25px 5vw;
+
+  section.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    .left {
+      h2 {
+        font-size: 1.2em;
+        margin: 15px 0;
+      }
+      nav.bots-nav {
+        display: flex;
+        .bots-nav-item {
+          position: relative;
+          padding: 15px 0;
+          cursor: pointer;
+          &:after {
+            background: royalblue;
+            @include animated-after;
+          }
+          &.selected:after {
+            width: 100%;
+          }
+          &:last-child {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .create-new-btn {
+      color: #fff;
+      background: royalblue;
+      padding: 15px;
+      border-radius: 7px;
+      transition: all .2s;
+      &:hover {
+        background: #5270Ee;
+      }
+    }
+  }
+}

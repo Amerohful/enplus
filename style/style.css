@@ -1,0 +1,118 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18.5px;
+}
+
+a {
+  text-decoration: none;
+  color: #dddddd;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+header {
+  flex: auto 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  color: #dddddd;
+  background: linear-gradient(to top, #202020, #2f2f2f);
+  padding: 0 5vw;
+}
+header .logo {
+  flex: auto 0 0;
+  padding: 15px 0;
+}
+header nav.main-nav {
+  display: flex;
+  flex: auto 1 0;
+}
+header nav.main-nav .main-nav-item {
+  margin-left: 4vw;
+  position: relative;
+  padding: 15px 0;
+  cursor: pointer;
+}
+header nav.main-nav .main-nav-item:first-child {
+  margin-left: 7vw;
+}
+header nav.main-nav .main-nav-item:after {
+  background: #dddddd;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 0;
+  height: 4px;
+  transition: all 0.2s;
+}
+header nav.main-nav .main-nav-item:hover:after {
+  width: 100%;
+}
+header .auth {
+  padding: 15px 0;
+}
+
+main {
+  flex: auto 1 1;
+  font-family: "Montserrat", sans-serif;
+  padding: 25px 5vw;
+}
+main section.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+main section.top .left h2 {
+  font-size: 1.2em;
+  margin: 15px 0;
+}
+main section.top .left nav.bots-nav {
+  display: flex;
+}
+main section.top .left nav.bots-nav .bots-nav-item {
+  position: relative;
+  padding: 15px 0;
+  cursor: pointer;
+}
+main section.top .left nav.bots-nav .bots-nav-item:after {
+  background: royalblue;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 0;
+  height: 4px;
+  transition: all 0.2s;
+}
+main section.top .left nav.bots-nav .bots-nav-item.selected:after {
+  width: 100%;
+}
+main section.top .left nav.bots-nav .bots-nav-item:last-child {
+  margin-left: 20px;
+}
+main section.top .create-new-btn {
+  color: #fff;
+  background: royalblue;
+  padding: 15px;
+  border-radius: 7px;
+  transition: all 0.2s;
+}
+main section.top .create-new-btn:hover {
+  background: #5270Ee;
+}
+
+/*# sourceMappingURL=style.css.map */
