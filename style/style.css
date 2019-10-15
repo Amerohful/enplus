@@ -115,4 +115,36 @@ main section.top .create-new-btn:hover {
   background: #5270Ee;
 }
 
+.auth-block, .reg-block {
+  width: 400px;
+  background-color: #dddddd;
+  justify-content: center;
+  position: absolute;
+  left: calc(50% - 200px);
+  top: 30%;
+}
+.auth-block form, .reg-block form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 10px;
+}
+.auth-block form input, .reg-block form input{
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.pop-up {
+  display: none;
+}
+
+.modal-show {
+  display: flex;
+}
+/*Я тут колхозил стили*/
+
+.user-block{
+  list-style: none;
+}
+
+/**/
 /*# sourceMappingURL=style.css.map */
