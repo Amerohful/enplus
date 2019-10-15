@@ -13,6 +13,7 @@ $('.bots-nav-item').click(function (e) {
 
 $(function () {
     $('header').load('header.html');
+
     if ($('.bots').children.length) {
         $('.bots').append("<p>нет ботов в данной категории</p>")
     }
