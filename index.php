@@ -48,6 +48,7 @@
                 <div class="bot">
                     <h4 class="bot-name">test name</h4>
                     <p class="bot-description"></p>
+                    <button class="add-keys-to-bot">Добавить ключи</button>
                 </div>
             </div>
         </section>
@@ -71,6 +72,7 @@
             <input type="text" name="login" id="login">
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password">
+            <button class="btn auth-close-btn">Закрыть</button>
             <button type="submit">Войти</button>
         </form>
     </section>
@@ -85,8 +87,18 @@
         <label for='reg-accord'>Согласие</label><input type="radio" name="accord"  id='reg-accord'>
         <div class="footer-reg">
         <a class="btn back-link" href="index.php">На главную</a>
+        <button class="btn reg-close-btn">Закрыть</button>
         <button class="btn reg-submit" type="submit" name="go">Ок</button>
         </div>
+      </form>
+  </section>
+  <section class="dialog-block" >
+      <form method="post" action="download_keys/download.php" class="dialog-form">
+        <label for="keys">Ключи</label>  
+          <input type="text" name="keys">
+            <label for="answer">значение</label>  
+          <input type="text" name="answer"> on>
+          <button type="submit" name="ok">Ок</button>
       </form>
   </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

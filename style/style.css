@@ -133,6 +133,29 @@ main section.top .create-new-btn:hover {
   margin-top: 10px;
 }
 
+
+/*Я тут колхозил стили*/
+
+.user-block{
+  list-style: none;
+}
+
+.dialog-block{
+  display: none;
+
+}
+
+.dialog-block form{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px 20px
+}
+
+.dialog-block form input{
+  margin: 10px
+} 
+
 .pop-up {
   display: none;
 }
@@ -140,10 +163,9 @@ main section.top .create-new-btn:hover {
 .modal-show {
   display: flex;
 }
-/*Я тут колхозил стили*/
 
-.user-block{
-  list-style: none;
+.modal-close{
+  display: none;
 }
 
 /**/
