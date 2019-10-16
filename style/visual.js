@@ -19,6 +19,12 @@ $('#messenger-selector').click(function (e) {
         
 });
 
+function addPair() {
+    var template =  $('.pair.template').clone();
+    $(template).removeClass('template');
+    $('.commands').prepend(template);
+}
+
 $('.create-new-btn').click(function (e) {
     e.preventDefault();
     $('#messenger-selector').removeClass('hidden');
@@ -34,3 +40,4 @@ $('.btn').click(function (e) {
     if ($(this).hasClass('disabled'))
         e.preventDefault();
 })
+

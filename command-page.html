@@ -23,12 +23,19 @@
             </nav>
         </div>
     </section>
-    <form class="commands">
-        <div class="pair template">
-            <textarea placeholder="ключевые слова" class="key-words" maxlength="20"></textarea>
-            <textarea placeholder="ответ" class="answer"></textarea>
+    <form class="commands-form">
+        <input type="button" value="добавить" class="btn" onclick="addPair()">
+        <div class="commands">
+            <div class="pair">
+                <textarea placeholder="ключевые слова" class="key-words" maxlength="20"></textarea>
+                <textarea placeholder="ответ" class="answer"></textarea>
+            </div>
+            <div class="pair template">
+                <textarea placeholder="ключевые слова" class="key-words" maxlength="20"></textarea>
+                <textarea placeholder="ответ" class="answer"></textarea>
+            </div>
         </div>
-        <input type="button" value="добавить" class="btn">
+        <input type="button" value="создать бота" class="btn" onclick="">
     </form>
 </main>
 

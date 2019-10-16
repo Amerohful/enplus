@@ -91,30 +91,34 @@ main {
   padding: 25px 5vw;
   position: relative;
 }
-main .commands {
+main .commands-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   justify-content: start;
+  padding: 20px;
 }
-main .commands .pair {
+main .commands-form .pair {
   display: flex;
   align-items: start;
 }
-main .commands .btn {
+main .commands-form .pair.template {
+  display: none;
+}
+main .commands-form .btn {
   padding: 15px 50px;
   border: none;
 }
-main .commands textarea {
+main .commands-form textarea {
   margin: 30px 10px;
   resize: none;
 }
-main .commands textarea.key-words {
+main .commands-form textarea.key-words {
   height: 30px;
   width: 20vw;
 }
-main .commands textarea.answer {
+main .commands-form textarea.answer {
   height: 70px;
   width: 30vw;
 }

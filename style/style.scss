@@ -101,12 +101,16 @@ main {
   padding: 25px 5vw;
   position: relative;
 
-  .commands {
+  .commands-form {
     @include inner-alignment-center;
     justify-content: start;
+    padding: 20px;
     .pair {
       display: flex;
       align-items: start;
+      &.template {
+        display: none;
+      }
     }
     .btn {
       //width: 100%;
