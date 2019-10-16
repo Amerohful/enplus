@@ -91,25 +91,52 @@ main {
   padding: 25px 5vw;
   position: relative;
 }
-main section.top {
+main .commands {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+}
+main .commands .pair {
+  display: flex;
+  align-items: start;
+}
+main .commands .btn {
+  padding: 15px 50px;
+  border: none;
+}
+main .commands textarea {
+  margin: 30px 10px;
+  resize: none;
+}
+main .commands textarea.key-words {
+  height: 30px;
+  width: 20vw;
+}
+main .commands textarea.answer {
+  height: 70px;
+  width: 30vw;
+}
+main .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
 }
-main section.top .left h2 {
+main .top .left h2 {
   font-size: 1.2em;
   margin: 15px 0;
 }
-main section.top .left nav.bots-nav {
+main .top .left nav.bots-nav {
   display: flex;
 }
-main section.top .left nav.bots-nav .bots-nav-item {
+main .top .left nav.bots-nav .bots-nav-item {
   position: relative;
   padding: 15px 0;
   cursor: pointer;
 }
-main section.top .left nav.bots-nav .bots-nav-item:after {
+main .top .left nav.bots-nav .bots-nav-item:after {
   background: royalblue;
   content: "";
   position: absolute;
@@ -120,10 +147,10 @@ main section.top .left nav.bots-nav .bots-nav-item:after {
   height: 4px;
   transition: all 0.2s;
 }
-main section.top .left nav.bots-nav .bots-nav-item.selected:after {
+main .top .left nav.bots-nav .bots-nav-item.selected:after {
   width: 100%;
 }
-main section.top .left nav.bots-nav .bots-nav-item:last-child {
+main .top .left nav.bots-nav .bots-nav-item:last-child {
   margin-left: 20px;
 }
 main #messenger-selector {

@@ -101,7 +101,33 @@ main {
   padding: 25px 5vw;
   position: relative;
 
-  section.top {
+  .commands {
+    @include inner-alignment-center;
+    justify-content: start;
+    .pair {
+      display: flex;
+      align-items: start;
+    }
+    .btn {
+      //width: 100%;
+      padding: 15px 50px;
+      border: none;
+    }
+    textarea {
+      margin: 30px 10px;
+      resize: none;
+      &.key-words {
+        height: 30px;
+        width: 20vw;
+      }
+      &.answer {
+        height: 70px;
+        width: 30vw;
+      }
+    }
+  }
+
+  .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
