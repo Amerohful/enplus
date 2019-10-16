@@ -16,11 +16,13 @@ $(function () {
 $('#messenger-selector').click(function (e) {
     if ($(e.target).hasClass('hideable'))
         $(e.target).addClass('hidden');
+        
 });
 
 $('.create-new-btn').click(function (e) {
     e.preventDefault();
     $('#messenger-selector').removeClass('hidden');
+    $('#telegram-check').prop('checked', false);
 })
 
 // Переделать чекинг
