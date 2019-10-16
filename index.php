@@ -11,26 +11,7 @@
     <title>БиБот+</title>
 </head>
 <body>
-    <header>
-        <div class="logo">logo</div>
-        <nav class="main-nav">
-            <div class="main-nav-item">боты</div>
-            <div class="main-nav-item">инструкция</div>
-            <div class="main-nav-item">поддержка</div>
-        </nav>
-        <div class="place-holder"></div>
-        <div class="user-auth-info">
-            <?php echo $_COOKIE['login'];
-            ?>
-            <p><?php if(!empty($_SESSION['login'])){echo $_SESSION['login'];} ?></p>
-            <?php if(empty($_SESSION['login'])) { echo "<ul class=\"user-block\"><li><button class=\"auth-btn btn\" id='auth'>Вход</button></li>
-            <li><button class=\"reg-btn btn\">Регистрация</button></li></ul>";}
-            ?>
-            <?php if(!empty($_SESSION['login'])) { echo "<ul class=\"user-block\"><li><form name='disconect' class=\"disconect-form\" action='disconect.php' method='post'><button class=\"btn auth\" type=\"submit\">Выход</button></form></li></ul>";}
-            ?>
-<!--            <button class="auth-btn btn">Войти</button>-->
-        </div>
-    </header>
+    <?php include 'header.php' ?>
     <main>
         <section class="top">
             <div class="left">
@@ -40,7 +21,7 @@
                     <div class="bots-nav-item">шаблоны</div>
                 </nav>
             </div>
-            <a href='#' class="create-new-btn btn">новый бот</a>
+             <button class="create-new-btn btn">новый бот</button>
         </section>
         <section class="messenger">
             <h2>telegram</h2>
@@ -48,7 +29,6 @@
                 <div class="bot">
                     <h4 class="bot-name">test name</h4>
                     <p class="bot-description"></p>
-                    <button class="add-keys-to-bot">Добавить ключи</button>
                 </div>
             </div>
         </section>
@@ -60,19 +40,33 @@
             <h2>whatsapp</h2>
             <div class="bots"></div>
         </section>
+         <div id='messenger-selector' class="hidden hideable">
+            <div class="wrapper">
+                <form action="command-page.php" method="post">
+                    <input type="checkbox" id="telegram-check" checked>
+                    <label for="telegram-check">telegram</label>
+
+                    <input type="checkbox" id="viber-check" disabled>
+                    <label for="viber-check">viber</label>
+
+                    <input type="checkbox" id="whatsapp-check" disabled>
+                    <label for="whatsapp-check">whatsapp</label>
+                    <button type="submit" class="go-to-create-btn btn">Создать</button>
+                </form>
+            </div>
+        </div>
     </main>
 
     <footer>
     </footer>
 
-
+    
     <section class="auth-block pop-up">
         <form method="POST" action="auth/auth.php">
             <label for="login">Логин</label>
             <input type="text" name="login" id="login">
             <label for="password">Пароль</label>
             <input type="password" name="password" id="password">
-            <button class="btn auth-close-btn">Закрыть</button>
             <button type="submit">Войти</button>
         </form>
     </section>
@@ -87,18 +81,8 @@
         <label for='reg-accord'>Согласие</label><input type="radio" name="accord"  id='reg-accord'>
         <div class="footer-reg">
         <a class="btn back-link" href="index.php">На главную</a>
-        <button class="btn reg-close-btn">Закрыть</button>
         <button class="btn reg-submit" type="submit" name="go">Ок</button>
         </div>
-      </form>
-  </section>
-  <section class="dialog-block" >
-      <form method="post" action="download_keys/download.php" class="dialog-form">
-        <label for="keys">Ключи</label>  
-          <input type="text" name="keys">
-            <label for="answer">значение</label>  
-          <input type="text" name="answer"> on>
-          <button type="submit" name="ok">Ок</button>
       </form>
   </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

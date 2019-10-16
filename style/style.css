@@ -13,10 +13,31 @@ a {
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.btn {
+  color: #fff;
+  background: royalblue;
+  padding: 15px;
+  border-radius: 7px;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background: #5270Ee;
+}
+
+.btn.disabled {
+  background: #888888;
+  cursor: default;
 }
 
 header {
@@ -68,26 +89,58 @@ main {
   flex: auto 1 1;
   font-family: "Montserrat", sans-serif;
   padding: 25px 5vw;
+  position: relative;
 }
-main section.top {
+main .commands-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+}
+main .commands-form .pair {
+  display: flex;
+  align-items: start;
+}
+main .commands-form .pair.template {
+  display: none;
+}
+main .commands-form .btn {
+  padding: 15px 50px;
+  border: none;
+}
+main .commands-form textarea {
+  margin: 30px 10px;
+  resize: none;
+}
+main .commands-form textarea.key-words {
+  height: 30px;
+  width: 20vw;
+}
+main .commands-form textarea.answer {
+  height: 70px;
+  width: 30vw;
+}
+main .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
 }
-main section.top .left h2 {
+main .top .left h2 {
   font-size: 1.2em;
   margin: 15px 0;
 }
-main section.top .left nav.bots-nav {
+main .top .left nav.bots-nav {
   display: flex;
 }
-main section.top .left nav.bots-nav .bots-nav-item {
+main .top .left nav.bots-nav .bots-nav-item {
   position: relative;
   padding: 15px 0;
   cursor: pointer;
 }
-main section.top .left nav.bots-nav .bots-nav-item:after {
+main .top .left nav.bots-nav .bots-nav-item:after {
   background: royalblue;
   content: "";
   position: absolute;
@@ -98,21 +151,63 @@ main section.top .left nav.bots-nav .bots-nav-item:after {
   height: 4px;
   transition: all 0.2s;
 }
-main section.top .left nav.bots-nav .bots-nav-item.selected:after {
+main .top .left nav.bots-nav .bots-nav-item.selected:after {
   width: 100%;
 }
-main section.top .left nav.bots-nav .bots-nav-item:last-child {
+main .top .left nav.bots-nav .bots-nav-item:last-child {
   margin-left: 20px;
 }
-main section.top .create-new-btn {
-  color: #fff;
-  background: royalblue;
-  padding: 15px;
-  border-radius: 7px;
-  transition: all 0.2s;
+main #messenger-selector {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-main section.top .create-new-btn:hover {
-  background: #5270Ee;
+main #messenger-selector .wrapper {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #messenger-selector .wrapper form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #messenger-selector .wrapper form input[type=checkbox] {
+  display: none;
+}
+main #messenger-selector .wrapper form label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 7px 0;
+  padding: 15px;
+}
+main #messenger-selector .wrapper form input[type=checkbox]:checked + label {
+  color: #fff;
+}
+main #messenger-selector .wrapper form #telegram-check:checked + label {
+  background: #1e96c8;
+}
+main #messenger-selector .wrapper form input[type=checkbox]:disabled + label {
+  color: #888;
+}
+main #messenger-selector .wrapper .btn {
+  border: none;
+  width: 100%;
+  text-align: center;
 }
 
 .auth-block, .reg-block {
@@ -133,29 +228,6 @@ main section.top .create-new-btn:hover {
   margin-top: 10px;
 }
 
-
-/*Я тут колхозил стили*/
-
-.user-block{
-  list-style: none;
-}
-
-.dialog-block{
-  display: none;
-
-}
-
-.dialog-block form{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  padding: 20px 20px
-}
-
-.dialog-block form input{
-  margin: 10px
-} 
-
 .pop-up {
   display: none;
 }
@@ -163,9 +235,10 @@ main section.top .create-new-btn:hover {
 .modal-show {
   display: flex;
 }
+/*Я тут колхозил стили*/
 
-.modal-close{
-  display: none;
+.user-block{
+  list-style: none;
 }
 
 /**/
