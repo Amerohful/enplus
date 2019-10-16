@@ -9,6 +9,12 @@ $font-main: 'Montserrat', sans-serif;
   height: 4px;
   transition: all .2s;
 }
+@mixin inner-alignment-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 * {
   padding: 0;
   margin: 0;
@@ -22,11 +28,30 @@ a {
   color: #dddddd;
 }
 body {
+  position: relative;
   display: flex;
   flex-direction:  column;
   justify-content: space-between;
   min-height: 100vh;
 }
+.hidden {
+  display: none !important;
+}
+.btn {
+  color: #fff;
+  background: royalblue;
+  padding: 15px;
+  border-radius: 7px;
+  transition: all .2s;
+  &:hover {
+    background: #5270Ee;
+  }
+}
+.btn.disabled {
+  background: #888888;
+  cursor: default;
+}
+
 
 header {
   flex: auto 0 0;
@@ -74,6 +99,7 @@ main {
   flex: auto 1 1;
   font-family: $font-main;
   padding: 25px 5vw;
+  position: relative;
 
   section.top {
     display: flex;
@@ -105,13 +131,54 @@ main {
       }
     }
     .create-new-btn {
-      color: #fff;
-      background: royalblue;
+
+    }
+  }
+  #messenger-selector {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+    @include inner-alignment-center;
+
+    .wrapper {
+      background: #ffffff;
       padding: 15px;
-      border-radius: 7px;
-      transition: all .2s;
-      &:hover {
-        background: #5270Ee;
+      border-radius: 15px;
+      @include inner-alignment-center;
+      form {
+        @include inner-alignment-center;
+        input[type='checkbox'] {
+          display: none;
+
+        }
+        label {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+
+          margin: 7px 0;
+          padding: 15px;
+        }
+        input[type='checkbox']:checked + label {
+          color: #fff;
+        }
+        #telegram-check:checked + label {
+          background: #1e96c8;
+        }
+
+        input[type='checkbox']:disabled + label {
+          color: #888;
+        }
+      }
+
+      .btn {
+        border: none;
+        width: 100%;
+        text-align: center;
       }
     }
   }
