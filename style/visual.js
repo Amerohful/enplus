@@ -18,7 +18,7 @@ $(function () {
 $('#messenger-selector').click(function (e) {
     if ($(e.target).hasClass('hideable'))
         $(e.target).addClass('hidden');
-        
+
 });
 
 function addPair() {
@@ -30,19 +30,19 @@ function addPair() {
 $('.create-new-btn').click(function (e) {
     e.preventDefault();
     $('#messenger-selector').removeClass('hidden');
-    // $('#telegram-check').prop('checked', false);
-    // $('.go-to-create-btn').prop('disabled', 'disabled');
+    $('#telegram-check').prop('checked', false);
+    $('.go-to-create-btn').prop('disabled', 'disabled');
 });
 
 // Переделать чекинг
-// $('#messenger-selector input[type=checkbox]').change(function() {
-//     $('.go-to-create-btn').removeClass('disabled');
-// });
+$('#messenger-selector input[type=checkbox]').change(function() {
+    $('.go-to-create-btn').removeClass('disabled');
+});
 
-// $('.btn').click(function (e) {
-//     if ($(this).hasClass('disabled'))
-//         e.preventDefault();
-// });
+$('.btn').click(function (e) {
+    if ($(this).hasClass('disabled'))
+        e.preventDefault();
+});
 
 authBtn.addEventListener("click", function (evt) {
     evt.preventDefault();
@@ -59,3 +59,15 @@ regBtn.addEventListener("click", function (evt) {
     evt.preventDefault();
     popupReg.classList.add("modal-show");
 });
+
+$(function () {
+    if ($('.bots').children.length) {
+        $('.bots').append("<p>нет ботов в данной категории</p>")
+    }
+});
+
+// $(function(){
+//             $('numeral').each(function (i) {
+//                 $(this).html(i+1);
+//             });
+//         });

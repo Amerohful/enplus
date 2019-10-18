@@ -26,17 +26,19 @@
     </section>
     <form class="commands-form" method="POST" action="download_keys/save_keys.php">
       <div class="form-control">
-        <input type="button" value="добавить" class="btn" onclick="addPair()">
-      <input type="submit" value="создать бота" class="btn" name="ok">
+        <button type="button" name="button" class="btn add-scene-btn" onclick="addPair()">добавить сценарий</button>
+        <button type="button" name="ok" class="btn create-bot-btn" onclick="addPair()">создать бота</button>
       </div>
         <div class="commands">
             <div class="pair">
-                <textarea placeholder="ключевые слова (через запятую)" class="key-words"  name="key-words[]"></textarea>
-                <textarea placeholder="ответ" class="answer" name="answer[]"></textarea>
+              <p class="number">Сценарий № </p>
+                <label>Ключ<textarea placeholder="через запятую" class="key-words"  name="key-words[]"></textarea></label>
+                <label>Значение<textarea placeholder="ответ" class="answer" name="answer[]"></textarea></label>
             </div>
             <div class="pair template">
-                <textarea placeholder="ключевые слова (через запятую)" class="key-words" maxlength="20" name="key-words[]"></textarea>
-                <textarea placeholder="ответ" class="answer" name="answer[]"></textarea>
+              <p class="number">Сценарий № </p>
+              <label>Ключ<textarea placeholder="через запятую" class="key-words"  name="key-words[]"></textarea></label>
+              <label>Значение<textarea placeholder="ответ" class="answer" name="answer[]"></textarea></label>
             </div>
         </div>
 

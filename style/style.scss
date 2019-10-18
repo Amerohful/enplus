@@ -110,6 +110,10 @@ header {
   }
 }
 
+.add-scene-btn{
+  max-width: 200px;
+}
+
 
 
 main {
@@ -126,6 +130,23 @@ main {
     justify-content: start;
     padding: 20px;
 
+    .commands{
+      counter-reset: list1;
+      width: 100%
+    }
+
+    .number{
+      display: inline-block;
+      align-self: center;
+      margin-right: 20px;
+    }
+
+    .number::after{
+      counter-increment: list1;
+       /* Увеличиваем значение счетчика */
+      content: counter(list1);
+    }
+
   .form-control{
     display: flex;
     flex-direction: row;
@@ -133,12 +154,35 @@ main {
     align-self: flex-end;
     :first-child{
     margin-right: 20px;
+
   }
-}
+
+
+
+  }
+    label{
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      :first-of-type{
+        margin-right: 20px;
+      }
+    }
+
+    .key-words{
+          width: 430px;
+    }
+
 
     .pair {
       display: flex;
-      align-items: start;
+      margin-top: 20px;
+      padding: 20px;
+border: 1px solid #b4b1b1;
+border-radius: 10px;
+justify-content: space-around;
+
+
 
       &.template {
         display: none;
@@ -152,8 +196,8 @@ main {
 
     textarea {
       padding: 5px 10px;
-      margin: 30px 10px;
       resize: none;
+      margin-top: 10px;
 
       &.key-words {
       height: 70px;
@@ -236,6 +280,8 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+
 
         input[type=checkbox] {
           display: none;
