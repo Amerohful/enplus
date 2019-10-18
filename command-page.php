@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.min.css">
     <title>Enot+</title>
 </head>
 
@@ -25,18 +25,21 @@
         </div>
     </section>
     <form class="commands-form" method="POST" action="download_keys/save_keys.php">
+      <div class="form-control">
         <input type="button" value="добавить" class="btn" onclick="addPair()">
+      <input type="submit" value="создать бота" class="btn" name="ok">
+      </div>
         <div class="commands">
             <div class="pair">
-                <textarea placeholder="ключевые слова" class="key-words" maxlength="20" name="key-words[]"></textarea>
+                <textarea placeholder="ключевые слова (через запятую)" class="key-words"  name="key-words[]"></textarea>
                 <textarea placeholder="ответ" class="answer" name="answer[]"></textarea>
             </div>
             <div class="pair template">
-                <textarea placeholder="ключевые слова" class="key-words" maxlength="20" name="key-words[]"></textarea>
+                <textarea placeholder="ключевые слова (через запятую)" class="key-words" maxlength="20" name="key-words[]"></textarea>
                 <textarea placeholder="ответ" class="answer" name="answer[]"></textarea>
             </div>
         </div>
-        <input type="submit" value="создать бота" class="btn" name="ok">
+
     </form>
 </main>
 

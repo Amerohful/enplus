@@ -7,7 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.min.css">
     <title>БиБот+</title>
 </head>
 <body>
@@ -60,7 +60,7 @@
     <footer>
     </footer>
 
-    
+
     <section class="auth-block pop-up">
         <form method="POST" action="auth/auth.php">
             <label for="login">Логин</label>
