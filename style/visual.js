@@ -10,7 +10,7 @@ $('.bots-nav-item').click(function (e) {
 });
 
 $(function () {
-    if ($('.bots').children.length) {
+    if ($('.bots').children.length == 0) {
         $('.bots').append("<p>нет ботов в данной категории</p>")
     }
 });
@@ -30,8 +30,8 @@ function addPair() {
 $('.create-new-btn').click(function (e) {
     e.preventDefault();
     $('#messenger-selector').removeClass('hidden');
-    $('#telegram-check').prop('checked', false);
-    $('.go-to-create-btn').prop('disabled', 'disabled');
+    //$('#telegram-check').prop('checked', false);
+    //$('.go-to-create-btn').prop('disabled', 'disabled');
 });
 
 // Переделать чекинг
@@ -61,7 +61,7 @@ regBtn.addEventListener("click", function (evt) {
 });
 
 $(function () {
-    if ($('.bots').children.length) {
+    if ($('.bots').children.length == 0) {
         $('.bots').append("<p>нет ботов в данной категории</p>")
     }
 });

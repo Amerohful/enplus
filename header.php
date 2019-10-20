@@ -1,5 +1,5 @@
 <header>
-        <a href="index.php"><div class="logo">logo</div></a>
+        <a href="index.php"><div class="logo">EnOT+</div></a>
         <nav class="main-nav">
             <div class="main-nav-item">боты</div>
             <div class="main-nav-item">инструкция</div>

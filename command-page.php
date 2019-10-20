@@ -27,7 +27,7 @@
     <form class="commands-form" method="POST" action="download_keys/save_keys.php">
       <div class="form-control">
         <button type="button" name="button" class="btn add-scene-btn" onclick="addPair()">добавить сценарий</button>
-        <button type="button" name="ok" class="btn create-bot-btn" onclick="addPair()">создать бота</button>
+        <button type="submit" name="ok" class="btn create-bot-btn">создать бота</button>
       </div>
         <div class="commands">
             <div class="pair">
