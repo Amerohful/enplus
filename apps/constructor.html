@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>"ENot+" - создай своего бота</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+
+    <div id="constructor">
+        <nav class="side-menu">
+            <a href="#" class="side-menu-item" data-item-name="main" onclick="sideMenuItemClick(this)">1</a>
+            <a href="#" class="side-menu-item" data-item-name="notmain" onclick="sideMenuItemClick(this)">2</a>
+        </nav>
+        <main id="main">
+            <section data-section-name="main">
+                <h2>основное</h2>
+                <div class="container">
+                    <label>организация</label>
+                    <input type="text" placeholder="EN+">
+
+                    <label>название бота</label>
+                    <input type="text" placeholder="MyVeryOwnBot">
+
+                    <label>приветствие</label>
+                    <textarea type="text" placeholder="Hello World!"></textarea>
+
+                    <label>назначение</label>
+                    <form action="">
+                        <input type="checkbox" id="req">
+                        <label for="req">подача заявок</label><br>
+
+                        <input type="checkbox" id="1s" name="dest">
+                        <label for="1s">работа с документацией</label><br>
+
+                        <input type="checkbox" id="clients" name="dest">
+                        <label for="clients">работа с клиентами</label>
+                    </form>
+
+                    <label>платформы</label>
+                    <form action="">
+                        <input type="checkbox" id="req">
+                        <label for="req">подача заявок</label><br>
+
+                        <input type="checkbox" id="1s" name="dest">
+                        <label for="1s">работа с документацией</label><br>
+
+                        <input type="checkbox" id="clients" name="dest">
+                        <label for="clients">работа с клиентами</label>
+                    </form>
+                </div>
+            </section>
+            <section data-section-name="notmain">2</section>
+        </main>
+    </div>
+
+
+</body>
+</html>
