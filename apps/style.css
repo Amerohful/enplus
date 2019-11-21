@@ -74,20 +74,6 @@ body {
   padding: 7px 15px;
   font-size: 0.8em;
 }
-#constructor main section .container label {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-#constructor main section .container label.platform {
-  padding: 10px 15px;
-}
-#constructor main section .container label.platform *[type=text], #constructor main section .container label.platform *[type=checkbox] {
-  display: none;
-}
-#constructor main section .container label.disabled {
-  background: #ddd;
-}
 #constructor main section .container textarea {
   height: 100px;
   resize: none;
