@@ -12,3 +12,7 @@ function toggleSection(toggledItemVal) {
             sections[i].classList.add('hidden');
     }
 }
+
+function toggleCheckPlatform(sender) {
+    // sender.parentElement.classList.
+}

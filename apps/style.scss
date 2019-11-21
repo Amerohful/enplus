@@ -73,6 +73,21 @@ body {
           font-size: 0.8em;
         }
 
+        label {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          &.platform {
+            padding: 10px 15px;
+
+            *[type="text"], *[type='checkbox'] {
+              display: none;
+            }
+          }
+          &.disabled {
+            background: #ddd;
+          }
+        }
 
         textarea {
           height: 100px;
