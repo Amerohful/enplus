@@ -23,6 +23,18 @@ body {
 #constructor a:hover {
   background: #333355;
 }
+#constructor a.button {
+  color: #000000;
+  text-align: center;
+  display: block;
+  width: 20%;
+  padding: 15px;
+  text-decoration: underline;
+  margin: 0 auto;
+}
+#constructor a.button:hover {
+  background: #dddddd;
+}
 #constructor .side-menu {
   flex: 0 0 70px;
   background: #222244;
@@ -73,6 +85,9 @@ body {
   width: 100%;
   padding: 7px 15px;
   font-size: 0.8em;
+}
+#constructor main section .container *[type=text].key {
+  width: 100%;
 }
 #constructor main section .container textarea {
   height: 100px;

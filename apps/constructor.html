@@ -27,13 +27,13 @@
                     <input type="text" placeholder="EN+">
 
                     <label>ответственное лицо</label>
-                    <input type="text" placeholder="Имя, фамилия">
+                    <input type="text" placeholder="имя, фамилия">
 
                     <label>почта</label>
                     <input type="text" placeholder="e-mail">
 
                     <label>телефон</label>
-                    <input type="text" placeholder="Номер телефона">
+                    <input type="text" placeholder="номер телефона">
                 </div>
             </section>
             <section data-section-name="main" class="hidden">
@@ -43,7 +43,7 @@
                     <input type="text" placeholder="MyVeryOwnBot">
 
                     <label>приветствие</label>
-                    <textarea type="text" placeholder="Hello World!"></textarea>
+                    <textarea type="text" placeholder="hello World!"></textarea>
 
                     <label>назначение</label>
                     <form action="">
@@ -82,7 +82,13 @@
                 </div>
             </section>
             <section data-section-name="options" class="hidden">
-                <h2>методы обработки</h2>
+                <h2>сценарии</h2>
+
+                <div class="container" id="scenarios">
+                    <textarea type="text" placeholder="ключи через запятую" class="scenario-keys template-k"></textarea>
+                    <textarea type="text" placeholder="ответ" class="scenario-ans template-a"></textarea>
+                </div>
+                <a href="#" onclick="" class="button">добавить сценарий</a>
             </section>
         </main>
     </div>

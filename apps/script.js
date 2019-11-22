@@ -12,3 +12,12 @@ function toggleSection(toggledItemVal) {
             sections[i].classList.add('hidden');
     }
 }
+
+function addScenario(sender) {
+    sender.preventDefault();
+
+    let sc = document.getElementById('scenarios');
+
+    sc.add(scenarioFields[0]);
+    sc.add(scenarioFields[1]);
+}

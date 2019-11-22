@@ -19,6 +19,18 @@ body {
     &:hover {
       background: #333355;
     }
+    &.button {
+      color: #000000;
+      text-align: center;
+      display: block;
+      width: 20%;
+      padding: 15px;
+      text-decoration: underline;
+      margin: 0 auto;
+      &:hover {
+        background: #dddddd;
+      }
+    }
   }
   .side-menu {
     flex: 0 0 70px;
@@ -71,6 +83,10 @@ body {
           width: 100%;
           padding: 7px 15px;
           font-size: 0.8em;
+
+          &.key {
+            width: 100%;
+          }
         }
 
 
@@ -78,6 +94,8 @@ body {
           height: 100px;
           resize: none;
         }
+
+
       }
     }
   }
