@@ -19,8 +19,8 @@
         include './steps/step_1.php';
 ?>
 
-<a href="https://vk.com/jumpflayer" target="_blank">
-    <img src="./content/enot.png" alt="" class="logo">
+<a href="https://vk.com/jumpflayer" target="_blank" class="logo">
+    <img src="./content/enot.png" alt="">
 </a>
 <script src="script.js"></script>
 </body>

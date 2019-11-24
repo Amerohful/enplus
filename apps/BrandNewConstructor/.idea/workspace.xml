@@ -16,20 +16,22 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/connection.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/steps/step_1.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db_processing/write_step_2.php" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/db_processing/write_step_1.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1U2tzXC45ckJ4eRXgm0aZHw67pL" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/content" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab3.loc" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\OSPanel\domains\constructor\content" />
-      <recent name="C:\OpenServer\OSPanel\domains\constructor\style\content" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\OSPanel\domains\constructor" />
       <recent name="C:\OpenServer\OSPanel\domains\constructor\style" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\OSPanel\domains\constructor\content" />
+      <recent name="C:\OpenServer\OSPanel\domains\constructor\style\content" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -57,7 +59,10 @@
       <workItem from="1574566781611" duration="3615000" />
       <workItem from="1574570559761" duration="82000" />
       <workItem from="1574570792661" duration="319000" />
-      <workItem from="1574571350877" duration="15180000" />
+      <workItem from="1574571350877" duration="16038000" />
+      <workItem from="1574590513323" duration="3193000" />
+      <workItem from="1574600176728" duration="3983000" />
+      <workItem from="1574604235044" duration="391000" />
     </task>
     <servers />
   </component>

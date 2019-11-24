@@ -9,6 +9,7 @@
 
 
 <main>
+<!--    <form action="../db_processing/write_step_3.php" class="container" method="post">-->
     <form action="../index.php?step=4" class="container" method="post">
         <h1>настройка сценариев</h1>
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -15,18 +16,38 @@ body {
   flex-direction: column;
   background: #24B6CA;
   position: relative;
-  overflow: hidden;
 }
 body .logo {
-  position: absolute;
+  position: fixed;
   right: 5%;
   transform: translateY(67%);
   bottom: 0;
-  height: 20%;
+  height: 150px;
   transition: all 0.3s ease-out;
+}
+body .logo:before {
+  position: absolute;
+  content: "задать вопрос";
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  bottom: 80%;
+  left: -40%;
+  transition: all 0.3s;
+  color: #000000;
+  transition-delay: 0.3s;
+  opacity: 0;
 }
 body .logo:hover {
   transform: translateY(0);
+}
+body .logo:hover:before {
+  bottom: 107%;
+  opacity: 0.9;
+  transition-delay: 0;
+}
+body .logo img {
+  height: 100%;
 }
 
 header {
