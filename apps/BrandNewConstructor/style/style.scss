@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18.5px;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #24B6CA;
+  position: relative;
+  overflow: hidden;
+
+  .logo {
+    position: absolute;
+    right: 5%;
+    transform: translateY(67%);
+    bottom: 0;
+    height: 20%;
+
+    transition: all 0.3s ease-out;
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+}
+
+header {
+  flex: 0 0 70px;
+  height: 100vh;
+  border-right: solid white 2px;
+
+
+
+  ul {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+      text-align: center;
+      padding: 30px;
+      flex: 1 1 auto;
+      list-style: none;
+      border-bottom: solid #fff 2px;
+      &.current {
+        border-bottom: solid #fff 4px;
+        background: #35c7db;
+        &.last {
+          background: #66FE98;
+        }
+      }
+
+      .container {
+        height: 100%;
+        background-image:
+                url('../content/enot_logo.png');
+        -webkit-background-size: contain;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      img {
+        height: 30px;
+      }
+    }
+  }
+}
+
+main {
+
+  form.container {
+    width: 100%;
+    max-width: 800px;
+    border-top: solid #ffffff 1px;
+    padding: 50px 0 30px;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    align-items: start;
+    justify-items: start;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      padding: 0 15px;
+      background: #24b6ca;
+      font-size: 1.7em;
+    }
+    .c-r {
+      width: 100%;
+    }
+
+    input[type='text'], textarea {
+      background: none;
+      border: none;
+      border-bottom: solid #fff 2px;
+      padding: 2px 15px;
+      &:disabled {
+        border-bottom: solid #aaa 2px;
+      }
+    }
+
+    ::-webkit-input-placeholder {
+      color: #ffffff;
+      opacity: 0.5;
+    }
+    //::-ms-input-placeholder,
+    //::-moz-placeholder,
+    //::-moz-placeholder
+
+    input[type='submit'] {
+      cursor: pointer;
+      background: none;
+      position: absolute;
+      top: 105%;
+      border: none;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px 15px;
+      box-sizing: content-box;
+      font-size: 1.2em;
+
+      &:hover {
+        border-bottom: solid #fff 2px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+#constructor {
+  display: flex;
+  height: 100%;
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      background: #333355;
+    }
+    &.button {
+      color: #000000;
+      text-align: center;
+      display: block;
+      width: 20%;
+      padding: 15px;
+      text-decoration: underline;
+      margin: 0 auto;
+      &:hover {
+        background: #dddddd;
+      }
+    }
+  }
+  .side-menu {
+    flex: 0 0 70px;
+    background: #222244;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    a.side-menu-item {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+    }
+  }
+
+  main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    max-height: 100%;
+    overflow-y: scroll;
+    section {
+      position: relative;
+      padding: 30px 0;
+      border-top: solid #446 1px;
+      &.hidden {
+        display: none;
+      }
+
+      h2 {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        padding: 0 25px;
+        transform: translate(-50%, -55%);
+        background: #ffffff;
+      }
+
+      .container {
+        padding: 0 20px;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+        grid-gap: 30px;
+
+        *[type="text"] {
+          width: 100%;
+          padding: 7px 15px;
+          font-size: 0.8em;
+
+          &.key {
+            width: 100%;
+          }
+        }
+
+
+        textarea {
+          height: 100px;
+          resize: none;
+        }
+
+
+      }
+    }
+  }
+}
