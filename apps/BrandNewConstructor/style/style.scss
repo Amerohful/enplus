@@ -102,15 +102,23 @@ main {
     .c-r {
       width: 100%;
     }
-
+    label {
+      user-select: none;
+    }
     input[type='text'], textarea {
       background: none;
       border: none;
       border-bottom: solid #fff 2px;
       padding: 2px 15px;
+      resize: none;
       &:disabled {
         border-bottom: solid #aaa 2px;
       }
+    }
+    input[type='checkbox'] {
+      background: none;
+      border: solid #fff 1px;
+      color: #ffffff;
     }
 
     ::-webkit-input-placeholder {
@@ -136,6 +144,20 @@ main {
       &:hover {
         border-bottom: solid #fff 2px;
       }
+    }
+
+    .last-page-left-btn {
+      position: absolute;
+      top: 105%;
+      text-decoration: none;
+      font-size: 1.2em;
+
+      &:hover {
+        border-bottom: solid #fff 2px;
+      }
+    }
+    .last-page-right-btn {
+      right: 0;
     }
   }
 }

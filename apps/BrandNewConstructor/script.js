@@ -14,10 +14,12 @@ function toggleSection(toggledItemVal) {
 }
 
 function addScenario(sender) {
-    sender.preventDefault();
+    var q = document.querySelector('#quest-template').cloneNode(true);
+    var a = document.querySelector('#ans-template').cloneNode(true);
 
-    let sc = document.getElementById('scenarios');
+    q.setAttribute('id', '');
+    a.setAttribute('id', '');
 
-    sc.add(scenarioFields[0]);
-    sc.add(scenarioFields[1]);
+    document.querySelector('form.container').appendChild(q);
+    document.querySelector('form.container').appendChild(a);
 }

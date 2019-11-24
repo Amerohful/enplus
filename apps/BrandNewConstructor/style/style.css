@@ -93,14 +93,23 @@ main form.container h1 {
 main form.container .c-r {
   width: 100%;
 }
+main form.container label {
+  user-select: none;
+}
 main form.container input[type=text], main form.container textarea {
   background: none;
   border: none;
   border-bottom: solid #fff 2px;
   padding: 2px 15px;
+  resize: none;
 }
 main form.container input[type=text]:disabled, main form.container textarea:disabled {
   border-bottom: solid #aaa 2px;
+}
+main form.container input[type=checkbox] {
+  background: none;
+  border: solid #fff 1px;
+  color: #ffffff;
 }
 main form.container ::-webkit-input-placeholder {
   color: #ffffff;
@@ -120,6 +129,18 @@ main form.container input[type=submit] {
 }
 main form.container input[type=submit]:hover {
   border-bottom: solid #fff 2px;
+}
+main form.container .last-page-left-btn {
+  position: absolute;
+  top: 105%;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+main form.container .last-page-left-btn:hover {
+  border-bottom: solid #fff 2px;
+}
+main form.container .last-page-right-btn {
+  right: 0;
 }
 
 #constructor {
