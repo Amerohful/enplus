@@ -12,11 +12,13 @@ class User(QtWidgets.QMainWindow, user.Ui_MainWindow):
     temp = ""
     res = ""
     data = ""
+    bot = ""
 
-    def __init__(self, data):
+    def __init__(self, data, bot):
         super().__init__()
         self.setupUi(self)
         self.data = data
+        self.bot = bot
         self.delete_ansquest.clicked.connect(self.addRow)
         self.DB_ansquest.cellClicked.connect(self.click)
         self.DB_ansquest.cellDoubleClicked.connect(self.doubleclick)

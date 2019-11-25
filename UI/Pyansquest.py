@@ -12,11 +12,13 @@ class AQ(QtWidgets.QMainWindow, aq.Ui_MainWindow):
     temp = ""
     res = ""
     data = ""
+    bot = ""
 
-    def __init__(self, data):
+    def __init__(self, data, bot):
         super().__init__()
         self.setupUi(self)
         self.data = data
+        self.bot = bot
         self.delete_ansquest.clicked.connect(self.addRow)
         self.DB_ansquest.cellClicked.connect(self.click)
         self.DB_ansquest.cellDoubleClicked.connect(self.doubleclick)
@@ -31,7 +33,7 @@ class AQ(QtWidgets.QMainWindow, aq.Ui_MainWindow):
 
     def delete_row(self):
         if len(self.DB_ansquest.selectionModel().selectedRows()) > 0:
-            if self.data.delete_ansquest(self.res[self.DB_ansquest.currentRow()][0]) == 0:
+            if self.data.delete_ansquest(self.res[self.DB_ansquest.currentRow()][0], self.bot[0]) == 0:
                 pymsgbox.alert("Удалено", "Готово")
             else:
                 pymsgbox.alert("Произошла ошибка", "Ошибка")
@@ -39,7 +41,7 @@ class AQ(QtWidgets.QMainWindow, aq.Ui_MainWindow):
             pymsgbox.alert("Ошибка", "Готово")
 
     def doubleclick(self, row):
-        self.temp = change.Change(self.res[row][0], self.res[row][1], self.res[row][2], self.data)
+        self.temp = change.Change(self.res[row][0], self.res[row][1], self.res[row][2], self.data, self.bot)
         self.temp.show()
 
     def refreshTable(self):
@@ -51,7 +53,7 @@ class AQ(QtWidgets.QMainWindow, aq.Ui_MainWindow):
         self.DB_ansquest.horizontalHeaderItem(1).setTextAlignment(Qt.AlignCenter)
 
         # Получаем данные из БД
-        self.res = self.data.get_ansquest()
+        self.res = self.data.get_ansquest(self.bot[0])
         i = 0
         self.DB_ansquest.setRowCount(len(self.res))
         while i < len(self.res):
@@ -65,6 +67,6 @@ class AQ(QtWidgets.QMainWindow, aq.Ui_MainWindow):
         if self.lineEdit == "" or self.lineEdit_2 == "":
             pymsgbox.alert("Заполните поля", "Ошибка")
         else:
-            if self.data.add_ansquest(self.lineEdit_2.text().lower().strip(), self.lineEdit.text().lower().strip()) == 0:
+            if self.data.add_ansquest(self.lineEdit_2.text().lower().strip(), self.lineEdit.text().lower().strip(), self.bot[0]) == 0:
                 pymsgbox.alert("Данные добавлены", "Успешно")
                 self.refreshTable()

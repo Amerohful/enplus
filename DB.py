@@ -16,14 +16,14 @@ class DB:
 
     def check_user(self, login, password):
         cursor = self.database.cursor()
-        sql = "SELECT email, password, fullName FROM owner WHERE email = '" + login + "' AND password = '" + password + "'"
+        sql = "SELECT ownerID FROM owner WHERE email = '" + login + "' AND password = '" + password + "'"
         cursor.execute(sql)
         res = cursor.fetchall()
         cursor.close()
         if len(res) == 0:
             return "Ошибка"
         else:
-            return "готово"
+            return res
 
     def new_user(self, login, password, user):
         try:
@@ -99,11 +99,11 @@ class DB:
 
     # --------------------------ANSQUEST------------------------------------------
 
-    def get_answer(self, question):
+    def get_answer(self, question, botID):
         cursor = self.database.cursor()
         res = ""
         try:
-            sql = "SELECT answer FROM ansquest WHERE question = '" + question + "'"
+            sql = "SELECT answer FROM ansquest WHERE question = '" + question + "' AND botID='" + str(botID) + "'"
             cursor.execute(sql)
             res = cursor.fetchone()
         except Exception as e:
@@ -114,11 +114,11 @@ class DB:
         else:
             return "я не знаю ответа на этот вопрос"
 
-    def get_ansquest(self):
+    def get_ansquest(self, bot):
         cursor = self.database.cursor()
         res = ""
         try:
-            sql = "SELECT ansquestID, question, answer  FROM ansquest"
+            sql = "SELECT ansquestID, question, answer  FROM ansquest WHERE botID='" + str(bot) + "'"
             cursor.execute(sql)
             res = cursor.fetchall()
         except Exception as e:
@@ -126,10 +126,11 @@ class DB:
         cursor.close()
         return res
 
-    def add_ansquest(self, answer, question):
+    def add_ansquest(self, answer, question, bot):
         cursor = self.database.cursor()
         try:
-            sql = "INSERT INTO ansquest(botID, question, answer) VALUES('1', '" + question + "', '" + answer + "')"
+            sql = "INSERT INTO ansquest(botID, question, answer) VALUES('" + str(
+                bot) + "', '" + question + "', '" + answer + "')"
             cursor.execute(sql)
             self.database.commit()
         except Exception as e:
@@ -138,10 +139,11 @@ class DB:
         cursor.close()
         return 0
 
-    def update_ansquest(self, id, answer, question):
+    def update_ansquest(self, id, answer, question, bot):
         cursor = self.database.cursor()
         try:
-            sql = "UPDATE ansquest SET question = '" + question + "', answer = '" + answer + "' WHERE ansquestID = " + id
+            sql = "UPDATE ansquest SET botID='" + str(
+                bot) + "', question = '" + question + "', answer = '" + answer + "' WHERE ansquestID = " + id
             cursor.execute(sql)
             self.database.commit()
         except Exception as e:
@@ -151,10 +153,10 @@ class DB:
         cursor.close()
         return 0
 
-    def delete_ansquest(self, id):
+    def delete_ansquest(self, id, bot):
         cursor = self.database.cursor()
         try:
-            sql = "DELETE FROM ansquest WHERE ansquestID = '" + str(id) + "'"
+            sql = "DELETE FROM ansquest WHERE botID ='" + str(bot) + "' AND ansquestID = '" + str(id) + "'"
             cursor.execute(sql)
             self.database.commit()
         except Exception as e:
@@ -162,3 +164,20 @@ class DB:
             return "Ошибка"
         cursor.close()
         return 0
+
+    # ----------------------------bot-------------------------------------
+
+    def get_botid(self, owner):
+        cursor = self.database.cursor()
+        res = ""
+        try:
+            sql = "SELECT *  FROM bot WHERE ownerID='" + str(owner) + "'"
+            cursor.execute(sql)
+            res = cursor.fetchall()
+            cursor.close()
+            if len(res) == 0:
+                return 0
+            else:
+                return res
+        except Exception as e:
+            logger.exception(str(e))

@@ -1,5 +1,6 @@
 import sys
 
+import pymsgbox
 from PyQt5 import QtWidgets
 
 import DB
@@ -23,13 +24,18 @@ class Login(QtWidgets.QMainWindow, log.Ui_MainWindow):
         self.data = DB.DB()
 
     def auth(self):
-        if self.data.check_user(self.login.text(), self.password.text()) != "готово":
+        res = self.data.check_user(self.login.text(), self.password.text())
+        if res == "ошибка":
             self.login_error.setVisible(True)
         else:
             self.login_error.setVisible(False)
-            self.chat = chat.Chat(self.login.text(), self.password.text(), self.data)
-            self.chat.show()
-            self.close()
+            botid = self.data.get_botid(res[0][0])
+            if botid != 0:
+                self.chat = chat.Chat(self.login.text(), self.password.text(), self.data, botid[len(botid)-1])
+                self.chat.show()
+                self.close()
+            else:
+                pymsgbox.alert("Бот не обнаружен", "Ошибка")
 
     def registration(self):
         self.reg = registration.Register(self.data)

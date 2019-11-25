@@ -14,8 +14,9 @@ class Chat(QtWidgets.QMainWindow, chat.Ui_MainWindow):
     DB_ansquest = ""
     DB_user = ""
     prov = False
+    bot = ""
 
-    def __init__(self, login, password, data):
+    def __init__(self, login, password, data, bot):
         try:
             super().__init__()
             self.setupUi(self)
@@ -24,9 +25,10 @@ class Chat(QtWidgets.QMainWindow, chat.Ui_MainWindow):
             self.pushButton.setIconSize(QtCore.QSize(48, 48))
             self.pushButton.clicked.connect(self.send)
             self.Name = self.data.get_user(login, password)
-            self.chat.setPlainText("BOT: добро пожаловать " + self.Name)
+            self.bot = bot
+            self.chat.setPlainText("BOT: " + str(self.bot[3]) + " " + self.Name)
             self.action_exit.triggered.connect(self.close)
-            self.action_users.triggered.connect(self.users)
+            #self.action_users.triggered.connect(self.users)
             self.action_ansquest.triggered.connect(self.ansquest)
 
         except Exception as e:
@@ -44,10 +46,10 @@ class Chat(QtWidgets.QMainWindow, chat.Ui_MainWindow):
                     OC = OneC.OneC()
                     OC.get_docs()
                 else:
-                    self.chat.appendPlainText("BOT: " + str(self.data.get_answer(text)))
+                    self.chat.appendPlainText("BOT: " + str(self.data.get_answer(text, self.bot[0])))
                     self.textEdit.setPlainText(None)
             else:
-                if text == "\hel" or text == "/hel":
+                if text == "\help" or text == "/help":
                     self.chat.appendPlainText("BOT: " + "Доступные команды:")
                     self.chat.appendPlainText("     " + "'отмена': отменяет создание документа.")
                 elif text == "отмена":
@@ -60,26 +62,27 @@ class Chat(QtWidgets.QMainWindow, chat.Ui_MainWindow):
                         OC.create_doc(temp[0], temp[1], temp[2])
                         self.chat.appendPlainText("BOT: " + "Документ создан")
                         self.prov = not self.prov
-                    except Exception as e:
-                        self.chat.appendPlainText("BOT: " + "Что-то пошло не так. Убедитесь в правильности введеных вами данных и попробуйте еще раз. Список доступных команд с документами: \help")
+                    except Exception:
+                        self.chat.appendPlainText(
+                            "BOT: " + "Что-то пошло не так. Убедитесь в правильности введеных вами данных и попробуйте еще раз. Список доступных команд с документами: \help")
 
         except Exception as e:
             logger.exception(str(e))
         return 0
 
-    def users(self):
-        try:
-            self.DB_ansquest = user.User(self.data)
-            self.DB_ansquest.show()
-        except Exception as e:
-            logger.exception(str(e))
+    #def users(self):
+        #try:
+        #    self.DB_ansquest = user.User(self.data, self.bot)
+        #    self.DB_ansquest.show()
+        #except Exception as e:
+        #    logger.exception(str(e))
 
     def close(self):
         self.close()
 
     def ansquest(self):
         try:
-            self.DB_ansquest = aq.AQ(self.data)
+            self.DB_ansquest = aq.AQ(self.data, self.bot)
             self.DB_ansquest.show()
         except Exception as e:
             logger.exception(str(e))
