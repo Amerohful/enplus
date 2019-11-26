@@ -22,30 +22,33 @@ except TypeError as e:
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, 'Привет ' + str(name[len(name) - 1][3]))
+    bot.send_message(message.chat.id,  str(bot1[0][3]))
 
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
-    quest = data.get_ansquest(botid)
-    if message.text.lower() == "/help":
-        bot.send_message(message.chat.id, 'Вот что я знаю')
-        i = 0
-        question = ""
-        while i < len(quest):
-            question = question + quest[i][1] + '\n'
-            i = i + 1
-        bot.send_message(message.chat.id, question)
+    if message.text.lower() == "стикер":
+        bot.send_sticker(message.chat.id, 'CAADAgADHAADwDZPE8GCGtMs_g7hFgQ')
     else:
+        quest = data.get_ansquest(botid)
+        if message.text.lower() == "/help":
+            bot.send_message(message.chat.id, 'Вот что я знаю')
+            i = 0
+            question = ""
+            while i < len(quest):
+                question = question + quest[i][1] + '\n'
+                i = i + 1
+            bot.send_message(message.chat.id, question)
+        else:
 
-        i = 0
-        while i < len(quest):
-            if quest[i][1].lower() == message.text.lower():
-                bot.send_message(message.chat.id, quest[i][2])
-                break
-            i = i + 1
-        if i == len(quest):
-            bot.send_message(message.chat.id, 'Я незнаю ответ на это :(')
+            i = 0
+            while i < len(quest):
+                if quest[i][1].lower() == message.text.lower():
+                    bot.send_message(message.chat.id, quest[i][2])
+                    break
+                i = i + 1
+            if i == len(quest):
+                bot.send_message(message.chat.id, 'Я незнаю ответ на это :(')
 
 
 @bot.message_handler(content_types=['sticker'])
