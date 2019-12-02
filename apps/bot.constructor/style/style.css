@@ -1,0 +1,252 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 18.5px;
+  font-family: sans-serif;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #24B6CA;
+  position: relative;
+}
+body .logo {
+  position: fixed;
+  right: 5%;
+  transform: translateY(67%);
+  bottom: 0;
+  height: 150px;
+  transition: all 0.3s ease-out;
+}
+body .logo:before {
+  position: absolute;
+  content: "задать вопрос";
+  padding: 15px 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  bottom: 80%;
+  left: -40%;
+  transition: all 0.3s;
+  color: #000000;
+  transition-delay: 0.3s;
+  opacity: 0;
+}
+body .logo:hover {
+  transform: translateY(0);
+}
+body .logo:hover:before {
+  bottom: 107%;
+  opacity: 0.9;
+}
+body .logo img {
+  height: 100%;
+}
+
+header {
+  flex: 0 0 70px;
+  height: 100vh;
+  border-right: solid white 2px;
+}
+header ul {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header ul li {
+  text-align: center;
+  padding: 30px;
+  flex: 1 1 auto;
+  list-style: none;
+  border-bottom: solid #fff 2px;
+}
+header ul li.current {
+  border-bottom: solid #fff 4px;
+  background: #35c7db;
+}
+header ul li.current.last {
+  background: #66FE98;
+}
+header ul li .container {
+  height: 100%;
+  background-image: url("../content/enot_logo.png");
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+header ul li img {
+  height: 30px;
+}
+
+main form.container {
+  width: 100%;
+  max-width: 800px;
+  border-top: solid #ffffff 1px;
+  padding: 50px 0 30px;
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  align-items: start;
+  justify-items: start;
+  position: relative;
+}
+main form.container h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  padding: 0 15px;
+  background: #24b6ca;
+  font-size: 1.7em;
+}
+main form.container .c-r {
+  width: 100%;
+}
+main form.container label {
+  user-select: none;
+}
+main form.container input[type=text], main form.container textarea {
+  background: none;
+  border: none;
+  border-bottom: solid #fff 2px;
+  padding: 2px 15px;
+  resize: none;
+}
+main form.container input[type=text]:disabled, main form.container textarea:disabled {
+  border-bottom: solid #aaa 2px;
+}
+main form.container input[type=checkbox] {
+  background: none;
+  border: solid #fff 1px;
+  color: #ffffff;
+}
+main form.container ::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: 0.5;
+}
+main form.container input[type=submit] {
+  cursor: pointer;
+  background: none;
+  position: absolute;
+  top: 105%;
+  border: none;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 15px;
+  box-sizing: content-box;
+  font-size: 1.2em;
+}
+main form.container input[type=submit]:hover {
+  border-bottom: solid #fff 2px;
+}
+main form.container .last-page-left-btn {
+  position: absolute;
+  top: 105%;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+main form.container .last-page-left-btn:hover {
+  border-bottom: solid #fff 2px;
+}
+main form.container .last-page-right-btn {
+  right: 0;
+}
+
+#constructor {
+  display: flex;
+  height: 100%;
+}
+#constructor a {
+  color: #fff;
+  text-decoration: none;
+}
+#constructor a:hover {
+  background: #333355;
+}
+#constructor a.button {
+  color: #000000;
+  text-align: center;
+  display: block;
+  width: 20%;
+  padding: 15px;
+  text-decoration: underline;
+  margin: 0 auto;
+}
+#constructor a.button:hover {
+  background: #dddddd;
+}
+#constructor .side-menu {
+  flex: 0 0 70px;
+  background: #222244;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+#constructor .side-menu a.side-menu-item {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+}
+#constructor main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  max-height: 100%;
+  overflow-y: scroll;
+}
+#constructor main section {
+  position: relative;
+  padding: 30px 0;
+  border-top: solid #446 1px;
+}
+#constructor main section.hidden {
+  display: none;
+}
+#constructor main section h2 {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  padding: 0 25px;
+  transform: translate(-50%, -55%);
+  background: #ffffff;
+}
+#constructor main section .container {
+  padding: 0 20px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  grid-gap: 30px;
+}
+#constructor main section .container *[type=text] {
+  width: 100%;
+  padding: 7px 15px;
+  font-size: 0.8em;
+}
+#constructor main section .container *[type=text].key {
+  width: 100%;
+}
+#constructor main section .container textarea {
+  height: 100px;
+  resize: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -2,14 +2,21 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>"ENot+" - создай своего бота</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
+
+
 <body>
 
+<?php
+
+require_once 'connection.php';
+$link = mysqli_connect($host, $user, $pass, $db, $port)
+    or die(mysqli_error($link));
+
+mysqli_close($link);
+?>
 
     <div id="constructor">
         <nav class="side-menu">
@@ -47,14 +54,14 @@
 
                     <label>назначение</label>
                     <form action="">
+                        <input type="checkbox" id="clients" name="dest">
+                        <label for="clients">работа с клиентами</label>
+
                         <input type="checkbox" id="req">
                         <label for="req">подача заявок</label><br>
 
                         <input type="checkbox" id="1s" name="dest">
                         <label for="1s">работа с документацией</label><br>
-
-                        <input type="checkbox" id="clients" name="dest">
-                        <label for="clients">работа с клиентами</label>
                     </form>
 
                     <label>платформы</label>
